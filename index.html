@@ -25,28 +25,22 @@
           transform: scale(1.1);
         }
         30% {
-          transform: scale(3);
-        }
-      }
-      @keyframes colorChange {
-        0% {
-          color: blue;
-        }
-        30% {
-          color: red;
+          transform: scale(2);
         }
       }
       #zan {
         position: absolute;
-        width: 18%;
+        width: 12rem;
+        height: 12rem;
         top: 45%;
         left: 41%;
         border-radius: 50%;
+        animation: heartbeat 0.8s infinite;
       }
-      @media only screen and (min-width: 400px) {
+      @media only screen and (min-width: 500px) {
         #zan {
           width: 18%;
-          top: 45%;
+          top: 42%;
           left: 41%;
         }
       }
@@ -55,12 +49,12 @@
 
   <body>
     <canvas id="pinkboard"></canvas>
-    <img src="./zan.jpg" id="zan" />
+    <img src="./zan2.jpg" id="zan" />
     <script>
       /*
        * Settings
        */
-       var colorIndex = 0;
+      var colorIndex = 0;
       var settings = {
         particles: {
           length: 500, // maximum amount of particles
@@ -257,7 +251,7 @@
         }
 
         // creating the particle image using a dummy canvas
-        var image = (color) =>{
+        var image = (color) => {
           var canvas = document.createElement('canvas'),
             context = canvas.getContext('2d');
           canvas.width = settings.particles.size;
@@ -292,7 +286,7 @@
           var image = new Image();
           image.src = canvas.toDataURL();
           return image;
-        }
+        };
 
         // render that thing!
         function render() {
@@ -303,18 +297,18 @@
           var newTime = new Date().getTime() / 1000,
             deltaTime = newTime - (time || newTime);
           time = newTime;
-          var color = "";
-            if(colorIndex >= 0) {
-                color = "#ffeb3b";
-                colorIndex+=1;
-                if(colorIndex > 100){
-                    colorIndex = -100;
-                }
-            } else {
-                color = "#ff4040"
-                colorIndex+=1;
+          var color = '';
+          if (colorIndex >= 0) {
+            color = '#8bea80';
+            colorIndex += 1;
+            if (colorIndex > 100) {
+              colorIndex = -100;
             }
-            
+          } else {
+            color = '#ea80b0';
+            colorIndex += 1;
+          }
+
           // clear canvas
           context.clearRect(0, 0, canvas.width, canvas.height);
 
