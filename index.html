@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>Heart beat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Quattrocento+Sans:wght@700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <meta name="Generator" content="EditPlus" />
     <meta name="Author" content="" />
     <meta name="Keywords" content="" />
@@ -9,6 +15,9 @@
     <style>
       html,
       body {
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Quattrocento Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
         height: 100%;
         padding: 0;
         margin: 0;
@@ -37,9 +46,15 @@
         border-radius: 50%;
         animation: heartbeat 0.8s infinite;
       }
+      .gohanhime {
+        color: rgb(255, 19, 188);
+        position: absolute;
+        top: 20%;
+        left: 28%;
+        font-size: 80px;
+      }
       @media only screen and (min-width: 500px) {
         #zan {
-          width: 18%;
           top: 42%;
           left: 41%;
         }
@@ -50,6 +65,7 @@
   <body>
     <canvas id="pinkboard"></canvas>
     <img src="./zan2.jpg" id="zan" />
+    <h1 class="gohanhime">Gohan Hime</h1>
     <script>
       /*
        * Settings
